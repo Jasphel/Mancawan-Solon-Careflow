@@ -1,0 +1,15 @@
+
+# Build outputs
+bin/
+obj/
+
+# Visual Studio
+.vs/
+*.user
+
+# JetBrains
+.idea/
+
+# Local database configuration
+appsettings.json
+appsettings.Local.json
