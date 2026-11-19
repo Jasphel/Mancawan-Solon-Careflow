@@ -1,8 +1,8 @@
-
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using CareFlow.Data;
+using CareFlow.Services;
 using CareFlow.ViewModels;
 using CareFlow.Views;
 using Microsoft.EntityFrameworkCore;
@@ -42,6 +42,8 @@ public partial class App : Application
             services.AddDbContext<CareFlowDbContext>(options =>
                 options.UseNpgsql(connectionString));
 
+            services.AddTransient<AvailabilityService>();
+            services.AddTransient<BookingService>();
             services.AddTransient<MainWindowViewModel>();
 
             _serviceProvider = services.BuildServiceProvider();
